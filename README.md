@@ -1,4 +1,4 @@
-# motoreocrd-view
+# motorecord-cli
 
 > A Vue.js project
 
