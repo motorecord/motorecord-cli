@@ -16,7 +16,14 @@ export default new Router({
     {
       path: '/',
       name: 'layout',
-      component: layout
+      component: layout,
+      children: [
+        {
+          path: '/index',
+          name: 'index',
+          component: resolve => require(['@/views/index/index.vue'], resolve)
+        }
+      ]
     }
   ]
 })
