@@ -1,29 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import HelloWorld from '@/components/HelloWorld'
-import layout from '@/views/layout'
+import routes from '@/common/config/router.js'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/hello',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/',
-      name: 'layout',
-      component: layout,
-      children: [
-        {
-          path: '/index',
-          name: 'index',
-          component: resolve => require(['@/views/index/index.vue'], resolve)
-        }
-      ]
-    }
-  ]
+  mode: 'history', // 去掉url中的#
+  routes
 })
