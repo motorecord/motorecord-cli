@@ -1,18 +1,15 @@
 let routes = [
     {
-        path: '/hello',
-        name: 'HelloWorld',
-        component: resolve => require(['@/components/HelloWorld'], resolve)
-    },
-    {
         path: '/',
         name: 'layout',
-        component: resolve => require(['@/views/layout.vue'], resolve),
+        // component: resolve => require(['@/views/layout.vue'], resolve),
+        component: 'layout',
         children: [
             {
                 path: '/index',
                 name: 'index',
-                component: resolve => require(['@/views/index/index.vue'], resolve)
+                // component: resolve => require(['@/views/index/index.vue'], resolve)
+                component: 'index/index'
             }
         ]
     },
@@ -22,4 +19,21 @@ let routes = [
     }
 ]
 
-export default routes
+// 获取路由信息的方法
+const getRouters = function () {
+    createRoute(routes)
+    return routes
+}
+// 自动生成路由
+function createRoute(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (!arr[i].component) return
+        // 自动生成component
+        arr[i].component = () => import(`@/views/${arr[i].component}.vue`)
+        if (arr[i].children && arr[i].children.length > 0) {
+            createRoute(arr[i].children)
+        }
+    }
+}
+
+export default getRouters()
