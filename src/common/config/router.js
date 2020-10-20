@@ -2,6 +2,7 @@ let routes = [
     {
         path: '/',
         name: 'layout',
+        redirect: { name: 'index' }, // 定向到首页
         component: 'layout',
         children: [
             {
