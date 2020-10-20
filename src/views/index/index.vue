@@ -1,7 +1,6 @@
 <template>
   <div>
-    主布局
-    <router-view></router-view>
+    首页
   </div>
 </template>	
 
