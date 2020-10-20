@@ -18,6 +18,9 @@ let routes = [
             }
         ]
     },
+    {
+        component: 'login/index'
+    },
     { // 其他路径跳转到首页
         path: '/:catchAll(.*)',
         redirect: { name: 'index' }
