@@ -1,9 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import routes from './common/config/router.js'
+import Vue from "vue"
+import Router from "vue-router"
+import routes from "./common/config/router.js"
 
-const router = createRouter({
-    history: createWebHistory(), // 去掉url中的#
-    routes
+Vue.use(Router)
+
+export default new Router({
+    mode: 'history', // 去掉url中的#
+	routes
 })
-
-export default router

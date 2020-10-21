@@ -1,12 +1,12 @@
 <template>
   <div>
     主布局
-    <router-view></router-view>
+    <router-view />
   </div>
-</template>	
+</template>
 
 <script>
-</script>	
+</script>
 
 <style>
 </style>

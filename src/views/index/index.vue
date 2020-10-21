@@ -2,10 +2,10 @@
   <div>
     首页
   </div>
-</template>	
+</template>
 
 <script>
-</script>	
+</script>
 
 <style>
 </style>

@@ -11,9 +11,6 @@ let routes = [
         component: 'layout',
         children: [
             {
-                // path: '/index',
-                // name: 'index',
-                // component: () => import('../../views/index/index.vue')
                 component: 'index/index'
             }
         ]
