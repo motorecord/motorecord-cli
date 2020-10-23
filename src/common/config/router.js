@@ -12,6 +12,15 @@ let routes = [
         children: [
             {
                 component: 'index/index'
+            },
+            {
+                component: 'record/index'
+            },
+            {
+                component: 'find/index'
+            },
+            {
+                component: 'user/index'
             }
         ]
     },
@@ -19,7 +28,7 @@ let routes = [
         component: 'login/index'
     },
     { // 其他路径跳转到首页
-        path: '/:catchAll(.*)',
+        path: '*',
         redirect: { name: 'index' }
     }
 ]
