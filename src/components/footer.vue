@@ -16,6 +16,22 @@ export default {
       active: "home",
     };
   },
+  created() {
+    console.log(this.$route.path);
+    let activeClass = this.$route.path;
+    if (activeClass == "/home") {
+      this.active = "home";
+    }
+    if (activeClass == "/record") {
+      this.active = "record";
+    }
+    if (activeClass == "/find") {
+      this.active = "find";
+    }
+    if (activeClass == "/user") {
+      this.active = "user";
+    }
+  },
 };
 </script>
 
